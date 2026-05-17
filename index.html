@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos CSS--> 
     <link rel="stylesheet" href="Assets/css/styles.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Slider -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+    <!-- Moment -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/locale/es.min.js"></script>
+    <!-- Mis Scripts -->
+     <script type="text/javascript" src="Assets/js/main.js"></script>
+
     <title>Proyecto final</title>
 </head>
 <body>
     <section id="global">
         <header>
             <div id="logo">
-                Proyecto Final
+                <h1>Proyecto Final</h1>
             </div>
 
-            <nav>
+            <div class="clearfix"></div>
+
+
+            <nav id="menu">
                 <ul>
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#">Sobre Mi</a></li>
@@ -24,23 +39,53 @@
         </header>
 
         <div id="slider">
-
+            <div class="galeria">
+                <div><img src="Assets/img/hojas.jpg" title="Hojas" /></div>
+                <div><img src="Assets/img/rojo.jpg" title="Rojo" /></div>
+                <div><img src="Assets/img/cielo.jpg" title="Cielo" /></div>
+            </div>
         </div>
 
         <section id="content">
             <div id="posts">
-                <article class="post">
-                    <h2>Titulo del Articulo</h2>
-                    <span>Fecha de publicación</span>
+               <!-- Cargar posts desde json-->
+
+            </div>
+
+            
+            <aside id="sidebar">
+                <div id="about">
+                    <h4><span>¿Quien soy?</span></h4>
+                    <img src="Assets/img/caracol.jpg">
                     <p> 
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
-                </article>
-            </div>
+                </div>
 
-            <aside id="sidebar">
+                <div id="login">
+                    <h4><span>Identificate</span></h4>
+                    <form>
+                        <label for="name">
+                            Nombre
+                        </label>
+                        <input type="text" name="name">
+
+                         <label for="email">
+                            correo
+                        </label>
+                        <input type="email" name="email">
+
+                         <label for="password">
+                            Contraseña
+                        </label>
+                        <input type="password" name="password">
+                        <input type="submit" name="Entrar" id="Enviar" value="Entrar">
+                    </form>
+                </div>
 
             </aside>
+
+             <div class="clearfix"></div>
 
         </section>
     </section>
