@@ -1,64 +1,98 @@
-*{
+* {
     margin: 0;
     padding: 0;
     list-style: none;
     box-sizing: border-box;
 }
 
-.clearfix{
+.clearfix {
     float: none;
     clear: both;
 }
 
-
-
-#global{
+#global {
     width: 65%;
     margin: 0px auto;
     margin-top: 30px;
-    padding: 25px;
+    padding: 3%;
     background: white;
     box-shadow: 0px 0px 2px gray;
-    
 }
 
-#logo{
+#logo {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     letter-spacing: 4px;
     line-height: 75px;
     color: white;
     text-align: center;
-    width: 385px;
+    width: 100%;
+    max-width: 385px;
     height: 80px;
     margin-bottom: 20px;
     float: left;
     text-transform: uppercase;
 }
 
-#menu{
+#video {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#video iframe {
+    width: 100% !important;
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+#menu {
     font-family: Arial, Helvetica, sans-serif;
     background: #333;
     width: 100%;
     text-transform: uppercase;
     margin-bottom: 20px;
-
 }
 
-#menu ul{
+#menu ul {
     line-height: 46px;
     list-style: none;
-
 }
 
-#menu ul li{
+#menu ul li {
     height: 46px;
     display: inline-block;
     transition: all 300ms;
+    position: relative;
 }
 
+#menu ul li ul {
+    display: none;
+    position: absolute;
+    top: 46px;
+    left: 0;
+    width: 180px;
+    background: #444;
+    z-index: 1000;
+    line-height: 35px;
+}
 
-#menu  a{
+#menu ul li ul li {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#menu ul li ul li a {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+}
+
+#menu ul li:hover > ul {
+    display: block;
+}
+
+#menu a {
     display: block;
     color: white;
     text-decoration: none;
@@ -66,37 +100,36 @@
     padding-right: 30px;
 }
 
-#posts{
+#posts {
     width: 60%;
     float: left;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.post{
-    padding: 7px;
+.post {
+    padding: 10px;
 }
 
-h2{
+h2 {
     font-size: 30px;
     color: #333;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.post .date{
+.post .date {
     display: block;
     color: gray;
     margin-top: 5px;
-
 }
 
-.post p{
+.post p {
     margin-top: 10px;
     margin-bottom: 20px;
     line-height: 22px;
     text-align: justify;
 }
 
-.button-more{
+.button-more {
     font-size: 14px;
     text-align: center;
     display: block;
@@ -104,17 +137,18 @@ h2{
     color: white;
     text-decoration: none;
     margin-top: 10px;
-    width: 70px;
+    width: 100%;
+    max-width: 120px;
     margin-bottom: 20px;
 }
 
-#sidebar{
+#sidebar {
     font-family: Arial, Helvetica, sans-serif;
     width: 31%;
     float: right;
 }
 
-#sidebar h4{
+#sidebar h4 {
     margin-top: 50px;
     margin-bottom: 20px;
     text-align: center;
@@ -123,32 +157,35 @@ h2{
     background: url(../img/lines.png) repeat-x;
 }
 
-#sidebar h4 span{
+#sidebar h4 span {
     background: white;
     padding: 5px;
 }
 
-#sidebar img{
+#sidebar img {
     width: 100%;
 }
 
-#sidebar p{
+#sidebar p {
     font-size: 15px;
-    text-align:justify;
+    text-align: justify;
 }
 
 form input[type="text"],
 form input[type="password"],
-form input[type="email"]{
+form input[type="email"],
+form input[type="number"],
+select,
+textarea {
     padding: 5px;
     border-radius: 2px;
     border: 1px solid #ccc;
-    width: 80%;
+    width: 100%;
     margin-bottom: 10px;
     margin-top: 5px;
 }
 
-form input[type="submit"]{
+form input[type="submit"] {
     background: #eee;
     padding: 10px;
     border: 1px solid #ccc;
@@ -156,35 +193,72 @@ form input[type="submit"]{
     cursor: pointer;
 }
 
-footer{
+#box textarea {
+    padding: 10px;
+    height: 100px;
+    resize: vertical;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#grid div {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 5px;
+}
+
+#grid div img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    transition: transform 300ms;
+}
+
+#grid div img:hover {
+    transform: scale(1.05);
+}
+
+footer {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     color: white;
     height: 47px;
     background: rgba(51, 51, 51, 0.70);
-    margin:0px auto;
+    margin: 0px auto;
     width: 65%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
     margin-top: 50px;
     line-height: 47px;
 }
 
-.bx-wrapper, .bx-viewport{
+.bx-wrapper, .bx-viewport {
     height: 250px !important;
 }
 
-#selector_theme{
+#selector_theme {
     position: fixed;
     top: 40%;
+    left: 0;
     background: rgba(51, 51, 51, 0.5);
     width: 50px;
     height: 100px;
+    z-index: 2000;
 }
 
 #to-green,
 #to-red,
-#to-blue{
+#to-blue {
     width: 25px;
     height: 25px;
     border: 1px solid white;
@@ -195,41 +269,147 @@ footer{
     cursor: pointer;
 }
 
-#to-green{
+#to-green {
     background: #235E3D;
 }
 
-#to-red{
-    background: #CA34
+#to-red {
+    background: #CA3434;
 }
 
-#to-blue{
+#to-blue {
     background: #1F87C4;
 }
 
-.subir{
+.subir {
     color: white;
     text-decoration: none;
     float: right;
 }
 
-#box{
+#box {
     width: 60%;
     float: left;
     margin-top: 40px;
 }
 
-#acordeon{
+#acordeon {
     margin-top: 20px;
 }
 
-#reloj{
+#reloj {
     font-size: 40px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    color:#333;
+    color: #333;
     border: 5px dashed #333;
-    width: 30%;
+    width: 50%;
     padding: 30px;
     margin: 0px auto;
+    text-align: center;
+}
+
+#form_contact {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#form_contact label {
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-error {
+    /*float:right;*/
+    font-size: 11px;
+    background: red;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    #global {
+        width: 90%;
+    }
+    footer {
+        width: 90%;
+    }
+    #grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #global {
+        width: 95%;
+        padding: 20px;
+    }
+    #logo {
+        float: none;
+        margin: 0 auto 20px auto;
+    }
+    #menu {
+        height: auto;
+    }
+    #menu ul {
+        line-height: normal;
+    }
+    #menu ul li {
+        display: block;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    #menu a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #menu ul li ul {
+        display: block;
+        position: static;
+        width: 100%;
+        background: #222;
+    }
+    #menu ul li ul li {
+        border-bottom: none;
+    }
+    #menu ul li ul li a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #aaa;
+    }
+    #posts {
+        width: 100%;
+        float: none;
+    }
+    #sidebar {
+        width: 100%;
+        float: none;
+        margin-top: 30px;
+    }
+    #box {
+        width: 100%;
+        float: none;
+    }
+    #form_contact {
+        max-width: 100%;
+    }
+    #reloj {
+        width: 80%;
+    }
+    #grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+    footer {
+        width: 95%;
+        margin-top: 30px;
+    }
 }

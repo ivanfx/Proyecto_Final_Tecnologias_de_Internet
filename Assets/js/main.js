@@ -121,4 +121,20 @@ $(document).ready(function(){
         }, 1000)
         
     }
+
+    // Validación 
+     if(window.location.href.indexOf('contact') > -1){
+
+        $("form input[name='date']").datepicker({
+            dateFormat: 'dd-mm-yy'
+        });
+
+       $.validate({
+            lang: 'es',
+            errorMessagePosition: 'top',
+            scrollToTopOnError: true
+       });
+        
+    }
+
 });

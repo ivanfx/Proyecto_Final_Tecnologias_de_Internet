@@ -8,13 +8,17 @@
     <link id="theme" rel="stylesheet"  href="Assets/css/green.css">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- Moment -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/locale/es.min.js"></script>
+    <link rel="stylesheet" href="Assets/js/jquery-ui-1.14.2.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="Assets/js/jquery-ui-1.14.2.custom/jquery-ui.structure.css">
+    <link rel="stylesheet" href="Assets/js/jquery-ui-1.14.2.custom/jquery-ui.theme.min.css">
+    <script type="text/javascript" src="Assets/js/jquery-ui-1.14.2.custom/jquery-ui.min.js"></script>
+    
+    <!-- Validación-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
     <!-- Mis Scripts -->
      <script type="text/javascript" src="Assets/js/main.js"></script>
 
-    <title>reloj</title>
+    <title>Contacto</title>
 </head>
 <body>
     <div id="selector_theme">
@@ -46,19 +50,45 @@
                     <li><a href="contact.html">Contacto</a></li>
                 </ul>
             </nav>
-            
         </header>
 
-      
 
         <section id="content">
 
             <div id="box">
-               <!-- Cargar reloj-->
-                <div id="reloj">
+               <!-- Cargar formulario -->
+                <h2>Contacto</h2>
 
-                </div>
-               
+                <form action="" method="POST" id="form_contact">
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name" data-validation="alphanumeric">
+
+                    <label for="surname">Apellidos:</label>
+                    <input type="text" name="surname" id="surname" data-validation="alphanumeric">
+
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email" data-validation="email">
+
+                    <label for="sex">Sexo</label>
+                    <select name="sex" id="sex" data-validation="required">
+                        <option value="men">Hombre</option>
+                        <option value="woman">Mujer</option>
+                    </select>
+
+                    <label for="date">Fecha de nacimiento</label>
+                    <input type="text" name="date" id="date" data-validation="date" data-validation-format="dd-mm-yyyy">
+
+                    <label for="years">Edad</label>
+                    <input type="number" name="years" id="years" data-validation="number">
+                    <label for="message">Mensaje:</label>
+                    <textarea name="message" id="message" data-validation="required" rows="5"></textarea> <br>
+                    <input type="submit" value="Enviar">
+
+                    
+
+                </form>
+                                
+
             </div>
 
             
